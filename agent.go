@@ -82,7 +82,7 @@ func (a *agentClientUDP) EmitBatch(batch *jaeger.Batch) error {
 		return fmt.Errorf("Data does not fit within one UDP packet; size %d, max %d, spans %d",
 			a.thriftBuffer.Len(), a.maxPacketSize, len(batch.Spans))
 	}
-	_, err := a.connUDP.Write(ctx,a.thriftBuffer.Bytes())
+	_, err := a.connUDP.Write(a.thriftBuffer.Bytes())
 	return err
 }
 
