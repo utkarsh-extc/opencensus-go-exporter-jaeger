@@ -18,6 +18,7 @@ import (
 	"fmt"
 	"io"
 	"net"
+	"context"
 
 	"github.com/uber/jaeger-client-go/thrift"
 	"github.com/uber/jaeger-client-go/thrift-gen/agent"
